@@ -1,0 +1,44 @@
+[project]
+name = "affordance-segmentation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[dependency-groups]
+main = [
+    "objaverse>=0.1.7",
+    "fire>=0.7.0",
+    "einops>=0.8.1",
+    "natsort>=8.4.0",
+    "numpy<2",
+    "matplotlib",
+    "tensorflow",
+    "hydra-core",
+    "accelerate",
+    "opencv-python>=4.11.0.86",
+    "imageio>=2.37.0",
+    "trimesh>=4.6.8",
+    "open3d",
+    "pygltflib",
+    "natsort",
+    "setuptools",
+    "redis",
+]
+dev = [
+    "pre-commit",
+    "pytest>=8.3.5",
+    "ruff",
+    "jupyter",
+]
+
+[tool.uv]
+default-groups = ["main", "dev"]
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set.
+extend-select = ["E501"]

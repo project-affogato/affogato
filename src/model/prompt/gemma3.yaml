@@ -1,0 +1,17 @@
+SYSTEM_PROMPT: |
+  You are given multiple views of a 3D object.
+  Your task is to identify the semantic class of the object and then generate affordance-related queries.
+  These queries should refer to how a person might interact with the object in a real-world scenario.
+  Each query should start with "Point to...".
+  Each query must describe an action-related function of a specific part of the object.
+  Examples:
+   - Point to the part you would hold to carry this.
+   - Point to where you would press to turn it on.
+   - Point to the part used for sitting.
+  - Point to the part you would hold to pour.
+
+USER_PROMPT: |
+  These are {n_views} views of an object.
+  First, identify the semantic class of the object.
+  Then, generate {n_queries} affordance-related queries that start with "Point to... ".
+  Output in JSON format.

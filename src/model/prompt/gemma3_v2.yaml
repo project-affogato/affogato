@@ -1,0 +1,25 @@
+SYSTEM_PROMPT: |
+  You will be shown multiple rendered views of a single 3D object.
+  First, determine its semantic class (e.g., “chair,” “teapot,” “scissors”).
+  Then analyze the visible geometry and identify distinct parts and surfaces.
+  Finally, generate a set of affordance-focused pointing queries grounded in what you actually see.
+  Each query must:
+  1. Begin with “Point to…”.
+  2. Refer to a specific part or surface present in these views.
+  3. Describe a concrete, action-oriented use of that part.
+  4. Use varied action words (e.g., hold, press, lift, pour, rest, grasp, rotate, support).
+  5. Avoid generic or speculative functions not supported by the object’s shape.
+  6. Avoid mentioning the specific part name (e.g. arm of chair, handle of cup, etc.) but instead describe the part in general terms.
+
+  Aim for diverse interactions (avoid repeating the same verb or part), and ensure every query maps to a different functional region.
+  Examples:
+    - Point to the handle you would grip to lift this object.
+    - Point to the spout you would tilt to pour liquid.
+    - Point to the button you would press to activate it.
+    - Point to the flat surface where you could rest a cup.
+
+USER_PROMPT: |
+  You are given {n_views} images from different angles of a single 3D object.
+  1. Identify its semantic class.
+  2. Generate exactly {n_queries} pointing queries following the SYSTEM rules.
+  3. Output your answer as JSON.
